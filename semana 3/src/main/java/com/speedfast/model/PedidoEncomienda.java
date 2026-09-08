@@ -32,6 +32,7 @@ public class PedidoEncomienda extends Pedido {
      */
     @Override
     public void asignarRepartidor() {
+        System.out.println();
         System.out.println("Asignando repartidor de encomienda...");
         System.out.println("... ... ...");
     }
@@ -65,7 +66,7 @@ public class PedidoEncomienda extends Pedido {
         System.out.println("El peso de la encomienda ha sido verificado satisfactoriamente!");
         System.out.println("Embalando encomienda...");
         System.out.println("... ... ...");
-        System.out.println("La encomienda ha sido embalada satisfactoriamente!");
+        System.out.println("La encomienda ha sido embalada correctamente.");
         System.out.println("El pedido ha sido asignado a: "+nombreRepartidor);
         System.out.println();
         historial.add("Repartidor asignado: "+nombreRepartidor);

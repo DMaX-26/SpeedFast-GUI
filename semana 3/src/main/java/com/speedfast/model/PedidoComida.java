@@ -36,7 +36,9 @@ public class PedidoComida extends Pedido {
      */
     @Override
     public void asignarRepartidor() {
+        System.out.println();
         System.out.println("Asignando repartidor de comida...");
+        System.out.println("... ... ...");
     }
 
     /**

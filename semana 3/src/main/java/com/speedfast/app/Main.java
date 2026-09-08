@@ -1,11 +1,11 @@
 package com.speedfast.app;
 
-import com.speedfast.model.PedidoComida;
-import com.speedfast.model.PedidoEncomienda;
-import com.speedfast.model.PedidoExpress;
+import com.speedfast.model.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 
 public class Main {
@@ -19,6 +19,8 @@ public class Main {
         PedidoComida pedidoComida1 = new PedidoComida(1, "Pedido Comida", "Los álamos 123, Viña del Mar", 2.4);
         //Se llama al metodo mostrarResumen
         pedidoComida1.mostrarResumen();
+        //Se llama al metodo asignarRepartidor (version sobreescrita)
+        pedidoComida1.asignarRepartidor();
         //Se llama al metodo asignarRepartidor (version sobrecargada)
         pedidoComida1.asignarRepartidor("Pablo Gonzalez");
         //Se llama al metodo calcularTiempoEntrega
@@ -27,6 +29,7 @@ public class Main {
 
         PedidoComida pedidoComida2 = new PedidoComida(2, "Pedido Comida", "Calle Santiago 789, Con-con", 1.5);
         pedidoComida2.mostrarResumen();
+        pedidoComida2.asignarRepartidor();
         pedidoComida2.asignarRepartidor("Hector Rodriguez");
         pedidoComida2.calcularTiempoEntrega();
         pedidoComida2.cancelar();
@@ -44,6 +47,7 @@ public class Main {
 
         PedidoEncomienda pedidoEncomienda1 = new PedidoEncomienda(21, "Pedido Encomienda", "Pasaje el roble 321, Quilpué", 4.5);
         pedidoEncomienda1.mostrarResumen();
+        pedidoEncomienda1.asignarRepartidor();
         pedidoEncomienda1.asignarRepartidor("Martina Fernandez");
         pedidoEncomienda1.calcularTiempoEntrega();
         pedidoEncomienda1.despachar();
@@ -64,12 +68,14 @@ public class Main {
 
         PedidoExpress pedidoExpress1 = new PedidoExpress(12, "Pedido Express", "Calle Venecia 012, Valparaiso", 6);
         pedidoExpress1.mostrarResumen();
+        pedidoExpress1.asignarRepartidor();
         pedidoExpress1.asignarRepartidor("Pedro Suarez");
         pedidoExpress1.calcularTiempoEntrega();
         pedidoExpress1.despachar();
 
         PedidoExpress pedidoExpress2 = new PedidoExpress(13, "Pedido Express", "Calle Santa Maria 034, Valparaiso", 2);
         pedidoExpress2.mostrarResumen();
+        pedidoExpress2.asignarRepartidor();
         pedidoExpress2.asignarRepartidor("Mario Gonzalez");
         pedidoExpress2.calcularTiempoEntrega();
         pedidoExpress2.cancelar();
@@ -81,5 +87,35 @@ public class Main {
         for (PedidoExpress pex : historialPedidosExpress){
             pex.mostrarHistorial();
         }
+
+        //Se crea una lista vacía de tipo Pedido
+        List<Pedido> pedidos1 = new ArrayList<>();
+        //Se reutilizan los objetos de tipo PedidoComida y se agregan a la lista
+        pedidos1.add(pedidoComida1);
+        pedidos1.add(pedidoComida2);
+        //Se crea una instancia de Repartidor, se ingresa su nombre y un pedido asignado
+        Repartidor repartidor1 = new Repartidor("Victor Espinoza", pedidos1);
+
+        List<Pedido> pedidos2 = new ArrayList<>();
+        pedidos2.add(pedidoEncomienda1);
+        pedidos2.add(pedidoEncomienda2);
+        Repartidor repartidor2 = new Repartidor("Andres Suarez", pedidos2);
+
+        List<Pedido> pedidos3 = new ArrayList<>();
+        pedidos3.add(pedidoExpress1);
+        pedidos3.add(pedidoExpress2);
+        Repartidor repartidor3 = new Repartidor("Felipe Fernandez", pedidos3);
+
+        //Se crea un administrador de hilos con 3 hilos disponibles para ejecutar tareas
+        ExecutorService executorService = Executors.newFixedThreadPool(3);
+
+        //cada Repartidor toma un hilo para ejecutar tareas
+        executorService.execute(repartidor1);
+        executorService.execute(repartidor2);
+        executorService.execute(repartidor3);
+
+
+        executorService.shutdown();
+
     }
 }

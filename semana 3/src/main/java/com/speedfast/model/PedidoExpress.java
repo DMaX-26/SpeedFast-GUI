@@ -32,6 +32,7 @@ public class PedidoExpress extends Pedido {
 
     @Override
     public void asignarRepartidor() {
+        System.out.println();
         System.out.println("Asignando repartidor de pedidos express...");
         System.out.println("... ... ...");
     }
@@ -49,7 +50,9 @@ public class PedidoExpress extends Pedido {
         if (distanciaKm>5){
             tiempoEstimado = 10+5;
         }
+        System.out.println("---------------------------------------");
         System.out.println("Tiempo estimado de entrega: "+tiempoEstimado+" minutos");
+        System.out.println("---------------------------------------");
         System.out.println();
     }
 
