@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 
 public class Main {
@@ -66,6 +67,8 @@ public class Main {
             pe.mostrarHistorial();
         }
 
+
+
         PedidoExpress pedidoExpress1 = new PedidoExpress(12, "Pedido Express", "Calle Venecia 012, Valparaiso", 6);
         pedidoExpress1.mostrarResumen();
         pedidoExpress1.asignarRepartidor();
@@ -88,26 +91,35 @@ public class Main {
             pex.mostrarHistorial();
         }
 
+        ZonaDeCarga zonaDeCarga = new ZonaDeCarga();
+
         //Se crea una lista vacía de tipo Pedido
         List<Pedido> pedidos1 = new ArrayList<>();
         //Se reutilizan los objetos de tipo PedidoComida y se agregan a la lista
         pedidos1.add(pedidoComida1);
         pedidos1.add(pedidoComida2);
         //Se crea una instancia de Repartidor, se ingresa su nombre y un pedido asignado
-        Repartidor repartidor1 = new Repartidor("Victor Espinoza", pedidos1);
+        Repartidor repartidor1 = new Repartidor("Victor Espinoza", pedidos1, zonaDeCarga);
 
         List<Pedido> pedidos2 = new ArrayList<>();
         pedidos2.add(pedidoEncomienda1);
         pedidos2.add(pedidoEncomienda2);
-        Repartidor repartidor2 = new Repartidor("Andres Suarez", pedidos2);
+        Repartidor repartidor2 = new Repartidor("Andres Suarez", pedidos2, zonaDeCarga);
 
         List<Pedido> pedidos3 = new ArrayList<>();
         pedidos3.add(pedidoExpress1);
         pedidos3.add(pedidoExpress2);
-        Repartidor repartidor3 = new Repartidor("Felipe Fernandez", pedidos3);
+        Repartidor repartidor3 = new Repartidor("Felipe Fernandez", pedidos3, zonaDeCarga);
 
         //Se crea un administrador de hilos con 3 hilos disponibles para ejecutar tareas
         ExecutorService executorService = Executors.newFixedThreadPool(3);
+
+        //Se agregan pedidos a la zona de carga
+        zonaDeCarga.agregarPedido(pedidoComida1);
+        zonaDeCarga.agregarPedido(pedidoComida2);
+        zonaDeCarga.agregarPedido(pedidoEncomienda1);
+        zonaDeCarga.agregarPedido(pedidoEncomienda2);
+        zonaDeCarga.agregarPedido(pedidoExpress1);
 
         //cada Repartidor toma un hilo para ejecutar tareas
         executorService.execute(repartidor1);
@@ -115,7 +127,27 @@ public class Main {
         executorService.execute(repartidor3);
 
 
-        executorService.shutdown();
+        // Simulación activa durante 15 segundos
+        try {
+            Thread.sleep(15000);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
 
+        // Apagar el sistema
+        executorService.shutdownNow();
+
+        try {
+            //Comprobar por dos segundos que los hilos se hayan terminado de ejecutar
+            if (!executorService.awaitTermination(2, TimeUnit.SECONDS)) {
+                //Si no han terminado, se lanza un mensaje informativo
+                System.out.println("Algunos hilos no finalizaron correctamente.");
+            }
+        } catch (InterruptedException e) {
+            executorService.shutdownNow();
+        }
+        System.out.println();
+        System.out.println("Todos los pedidos han sido entregados correctamente.");
+        System.out.println();
     }
 }

@@ -15,11 +15,11 @@
     </properties>
 
     <build>
-        <sourceDirectory>semana 4/src/main/java</sourceDirectory>
-        <testSourceDirectory>semana 4/src/test/java</testSourceDirectory>
+        <sourceDirectory>semana 5/src/main/java</sourceDirectory>
+        <testSourceDirectory>semana 5/src/test/java</testSourceDirectory>
         <resources>
             <resource>
-                <directory>semana 4/src/main/resources</directory>
+                <directory>semana 5/src/main/resources</directory>
             </resource>
         </resources>
     </build>
