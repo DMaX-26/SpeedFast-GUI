@@ -58,7 +58,7 @@ public class VentanaPrincipal extends JFrame {
             ventana.setVisible(true);
         });
         /**
-         * btnEntregas abre la ventana que gestiona entregas
+         * btnEntregas abre la ventana que lista las entregas
          */
         btnListarEntregas.addActionListener(e -> {
             VentanaListaEntregas ventana =

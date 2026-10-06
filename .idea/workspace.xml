@@ -5,38 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7b4280ca-787a-49c9-971a-d6e0017bd25f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/semana 5/src/main/java/com/speedfast/connection/ConexionDB.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/semana 5/src/main/java/com/speedfast/dao/ClienteDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/semana 5/src/main/java/com/speedfast/dao/EntregaDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/semana 5/src/main/java/com/speedfast/dao/PedidoDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/semana 5/src/main/java/com/speedfast/dao/RepartidorDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/semana 5/src/main/java/com/speedfast/gui/VentanaListaEntregas.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/semana 5/src/main/java/com/speedfast/gui/VentanaListaEntregas.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/semana 5/src/main/java/com/speedfast/gui/VentanaListaPedidos.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/semana 5/src/main/java/com/speedfast/gui/VentanaListaPedidos.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/semana 5/src/main/java/com/speedfast/gui/VentanaListaRepartidores.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/semana 5/src/main/java/com/speedfast/gui/VentanaListaRepartidores.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/semana 5/src/main/java/com/speedfast/gui/VentanaPrincipal.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/semana 5/src/main/java/com/speedfast/gui/VentanaPrincipal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/semana 5/src/main/java/com/speedfast/gui/VentanaRegistroEntrega.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/semana 5/src/main/java/com/speedfast/gui/VentanaRegistroEntrega.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/semana 5/src/main/java/com/speedfast/gui/VentanaRegistroPedido.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/semana 5/src/main/java/com/speedfast/gui/VentanaRegistroPedido.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/semana 5/src/main/java/com/speedfast/gui/VentanaRegistroRepartidor.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/semana 5/src/main/java/com/speedfast/gui/VentanaRegistroRepartidor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/semana 5/src/main/java/com/speedfast/model/Entrega.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/semana 5/src/main/java/com/speedfast/app/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/semana 5/src/main/java/com/speedfast/app/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/semana 5/src/main/java/com/speedfast/model/Pedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/semana 5/src/main/java/com/speedfast/model/Pedido.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/semana 5/src/main/java/com/speedfast/model/PedidoComida.java" beforeDir="false" afterPath="$PROJECT_DIR$/semana 5/src/main/java/com/speedfast/model/PedidoComida.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/semana 5/src/main/java/com/speedfast/model/PedidoEncomienda.java" beforeDir="false" afterPath="$PROJECT_DIR$/semana 5/src/main/java/com/speedfast/model/PedidoEncomienda.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/semana 5/src/main/java/com/speedfast/model/PedidoExpress.java" beforeDir="false" afterPath="$PROJECT_DIR$/semana 5/src/main/java/com/speedfast/model/PedidoExpress.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/semana 5/src/main/java/com/speedfast/model/Repartidor.java" beforeDir="false" afterPath="$PROJECT_DIR$/semana 5/src/main/java/com/speedfast/model/Repartidor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/semana 5/src/main/java/com/speedfast/gui/VentanaPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/semana 5/src/main/java/com/speedfast/gui/VentanaPrincipal.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +14,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="44" />
+    <option name="cachedIndexableFilesCount" value="48" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -65,7 +35,7 @@
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/DMaX-26/SpeedFast.git&quot;,
+    &quot;url&quot;: &quot;https://github.com/DMaX-26/SpeedFast-GUI&quot;,
     &quot;accountId&quot;: &quot;ad3044ea-f887-4b0f-8587-62c00c27f81f&quot;
   }
 }</component>
@@ -87,6 +57,7 @@
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
@@ -119,7 +90,8 @@
       <workItem from="1791088089094" duration="205000" />
       <workItem from="1791153136423" duration="18552000" />
       <workItem from="1791213590590" duration="4450000" />
-      <workItem from="1791233316658" duration="16420000" />
+      <workItem from="1791233316658" duration="18115000" />
+      <workItem from="1791253915524" duration="1044000" />
     </task>
     <servers />
   </component>
