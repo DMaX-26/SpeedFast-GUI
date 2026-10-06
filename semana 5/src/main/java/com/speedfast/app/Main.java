@@ -1,7 +1,11 @@
 package com.speedfast.app;
 
+import com.speedfast.dao.PedidoDAO;
+import com.speedfast.dao.RepartidorDAO;
+import com.speedfast.gui.VentanaPrincipal;
 import com.speedfast.model.*;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
@@ -10,7 +14,8 @@ import java.util.concurrent.TimeUnit;
 
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
+        /**
         //Listas vacías
         List<PedidoComida> historialPedidosComida = new ArrayList<>();
         List<PedidoEncomienda> historialPedidosEncomienda = new ArrayList<>();
@@ -148,6 +153,37 @@ public class Main {
         }
         System.out.println();
         System.out.println("Todos los pedidos han sido entregados correctamente.");
-        System.out.println();
+        System.out.println();*/
+
+        RepartidorDAO dao = new RepartidorDAO();
+
+        Repartidor repartidor = new Repartidor(1, "Juan");
+
+        dao.create(repartidor);
+
+        List<Repartidor> lista = dao.readAll();
+
+        for (Repartidor r : lista) {
+            System.out.println(r);
+        }
+
+        Repartidor r = new Repartidor(1, "Pedro");
+        dao.update(r);
+
+        List<Repartidor> lista2 = dao.readAll();
+
+        for (Repartidor rp : lista2) {
+            System.out.println(rp);
+        }
+
+        Pedido pedido = new PedidoComida(0, "COMIDA", "Av. Siempre Viva 123", 0);
+
+        pedido.setEstado(EstadoPedido.PENDIENTE);
+
+        PedidoDAO d = new PedidoDAO();
+        d.create(pedido);
+
+        VentanaPrincipal ventana = new VentanaPrincipal();
+        ventana.setVisible(true);
     }
 }

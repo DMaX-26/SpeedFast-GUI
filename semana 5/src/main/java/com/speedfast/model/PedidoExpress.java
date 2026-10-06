@@ -30,6 +30,25 @@ public class PedidoExpress extends Pedido {
         historial.add("Distancia: "+distanciaKm+" km");
     }
 
+    /**
+     * Constructor para crear un "PedidoExpress" desde la interfaz
+     * @param tipoPedido
+     * @param direccionEntrega
+     * @param distanciaKm
+     */
+    public PedidoExpress(String tipoPedido, String direccionEntrega, double distanciaKm) {
+        /**
+         * Llamado al constructor de la clase padre para inicializar sus atributos en el objeto PedidoExpress
+         */
+        super(tipoPedido, direccionEntrega, distanciaKm);
+        /**
+         * Se inicializa la lista historial vacía
+         */
+        this.historial = new ArrayList<>();
+        historial.add("Número de pedido: "+idPedido);
+        historial.add("Distancia: "+distanciaKm+" km");
+    }
+
     @Override
     public void asignarRepartidor() {
         System.out.println();

@@ -24,4 +24,13 @@
         </resources>
     </build>
 
+    <dependencies>
+        <!-- Driver JDBC de MySQL: permite que DriverManager reconozca URLs jdbc:mysql:// -->
+        <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <version>8.4.0</version>
+        </dependency>
+    </dependencies>
+
 </project>

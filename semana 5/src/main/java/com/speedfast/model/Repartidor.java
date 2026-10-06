@@ -6,12 +6,14 @@ import java.util.List;
  * Clase que representa a un Repartidor. Reparte pedidos de forma concurrente
  */
 public class Repartidor implements Runnable {
+    private int idRepartidor;
     private String nombre;
     private List<Pedido> pedidos;//Repartidor tiene una lista de pedidos
     private ZonaDeCarga zonaDeCarga;//Tiene zonaDeCarga que contiene una cola con los pedidos pendientes
 
     /**
      * Constructor donde creamos los objetos e inicializamos los atributos nombre, la lista "pedidos" y la zona de carga con los pedidos pendientes
+     * (Usado para concurrencia)
      * @param nombre
      * @param pedidos
      */
@@ -19,6 +21,48 @@ public class Repartidor implements Runnable {
         this.nombre = nombre;
         this.pedidos = pedidos;
         this.zonaDeCarga = zonaDeCarga;
+    }
+
+    /**
+     * Constructor para trabajar con la BD
+     * @param idRepartidor
+     * @param nombre
+     * @param pedidos
+     * @param zonaDeCarga
+     */
+    public Repartidor(int idRepartidor, String nombre, List<Pedido> pedidos, ZonaDeCarga zonaDeCarga) {
+        this.idRepartidor = idRepartidor;
+        this.nombre = nombre;
+        this.pedidos = pedidos;
+        this.zonaDeCarga = zonaDeCarga;
+    }
+
+    /**
+     * Constructor para crear un Repartidor con su id y nombre
+     * @param idRepartidor
+     * @param nombre
+     */
+    public Repartidor(int idRepartidor, String nombre) {
+        this.idRepartidor = idRepartidor;
+        this.nombre = nombre;
+    }
+
+    /**
+     * Métodos getter and setter
+     * @return
+     */
+    public int getIdRepartidor() {
+        return idRepartidor;
+    }
+    public void setIdRepartidor(int idRepartidor) {
+        this.idRepartidor = idRepartidor;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     /**
@@ -60,5 +104,10 @@ public class Repartidor implements Runnable {
                  */
                 Thread.currentThread().interrupt();
             }
+    }
+
+    @Override
+    public String toString() {
+        return "id Repartidor: "+idRepartidor+", Nombre: " +nombre;
     }
 }

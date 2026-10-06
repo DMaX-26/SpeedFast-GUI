@@ -28,6 +28,22 @@ public class PedidoEncomienda extends Pedido {
     }
 
     /**
+     * Constructor para crear un "PedidoEncomienda" desde la interfaz
+     * @param tipoPedido
+     * @param direccionEntrega
+     * @param distanciaKm
+     */
+    public PedidoEncomienda(String tipoPedido, String direccionEntrega, double distanciaKm) {
+        /**
+         * Llamado al constructor de la clase padre para inicializar sus atributos en el objeto PedidoEncomienda
+         */
+        super(tipoPedido, direccionEntrega, distanciaKm);
+        this.historial = new ArrayList<>();
+        this.historial.add("Número de pedido: "+idPedido);
+        this.historial.add("Distancia: "+distanciaKm+" km");
+    }
+
+    /**
      * Redefine el metodo de la clase padre, cambiando su comportamiento
      */
     @Override

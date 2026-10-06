@@ -32,6 +32,18 @@ public abstract class Pedido implements Despachable, Cancelable, Rastreable, Com
         this.distanciaKm = distanciaKm;
     }
 
+    /**
+     * Constructor sin "id"
+     * @param tipoPedido
+     * @param direccionEntrega
+     * @param distanciaKm
+     */
+    public Pedido(String tipoPedido, String direccionEntrega, double distanciaKm) {
+        this.tipoPedido = tipoPedido;
+        this.direccionEntrega = direccionEntrega;
+        this.distanciaKm = distanciaKm;
+    }
+
     public int getIdPedido() {
         return idPedido;
     }

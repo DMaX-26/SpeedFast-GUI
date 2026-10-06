@@ -32,6 +32,20 @@ public class PedidoComida extends Pedido {
     }
 
     /**
+     * Constructor para crear un "PedidoComida" desde la interfaz
+     * @param tipoPedido
+     * @param direccionEntrega
+     * @param distanciaKm
+     */
+    public PedidoComida(String tipoPedido, String direccionEntrega, double distanciaKm) {
+        super(tipoPedido, direccionEntrega, distanciaKm);
+        this.historial = new ArrayList<>();
+        this.historial.add("Dirección: " + direccionEntrega);
+        this.historial.add("Distancia: " + distanciaKm + " km");
+    }
+
+
+    /**
      * Redefine el metodo de la clase padre, cambiando su comportamiento
      */
     @Override
