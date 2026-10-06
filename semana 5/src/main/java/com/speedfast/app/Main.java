@@ -155,34 +155,6 @@ public class Main {
         System.out.println("Todos los pedidos han sido entregados correctamente.");
         System.out.println();*/
 
-        RepartidorDAO dao = new RepartidorDAO();
-
-        Repartidor repartidor = new Repartidor(1, "Juan");
-
-        dao.create(repartidor);
-
-        List<Repartidor> lista = dao.readAll();
-
-        for (Repartidor r : lista) {
-            System.out.println(r);
-        }
-
-        Repartidor r = new Repartidor(1, "Pedro");
-        dao.update(r);
-
-        List<Repartidor> lista2 = dao.readAll();
-
-        for (Repartidor rp : lista2) {
-            System.out.println(rp);
-        }
-
-        Pedido pedido = new PedidoComida(0, "COMIDA", "Av. Siempre Viva 123", 0);
-
-        pedido.setEstado(EstadoPedido.PENDIENTE);
-
-        PedidoDAO d = new PedidoDAO();
-        d.create(pedido);
-
         VentanaPrincipal ventana = new VentanaPrincipal();
         ventana.setVisible(true);
     }
